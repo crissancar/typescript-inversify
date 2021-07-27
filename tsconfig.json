@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "types": ["reflect-metadata"],
+    "emitDecoratorMetadata": true,
+    "lib": ["es6"],
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
