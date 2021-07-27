@@ -6,8 +6,8 @@ import { Request, Response } from "express";
 export class UserGetController implements Controller {
   private finder: UserFinder;
 
-  constructor() {
-    this.finder = new UserFinder();
+  constructor(userFinder: UserFinder) {
+    this.finder = userFinder;
   }
 
   async run(req: Request, res: Response): Promise<void> {

@@ -4,6 +4,7 @@ import Router from "express-promise-router";
 import errorHandler from "errorhandler";
 import httpStatus from "http-status";
 import { registerRoutes } from "./routes";
+import loadIoCContainer from "../backend/dependency-injection/awilix/awilix.config";
 
 export class Server {
   private express: express.Express;
@@ -17,6 +18,8 @@ export class Server {
     const router = Router();
     router.use(errorHandler());
     this.express.use(router);
+
+    loadIoCContainer(this.express);
 
     registerRoutes(router);
 

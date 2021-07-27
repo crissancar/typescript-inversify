@@ -1,11 +1,11 @@
-import { InMemoryUserRepository } from "../infrastructure/persistence/InMemoryUserRepository";
 import { User } from "../domain/User";
+import { UserRepository } from "../domain/UserRepository";
 
 export class UserFinder {
-  private repository: InMemoryUserRepository;
+  private repository: UserRepository;
 
-  constructor() {
-    this.repository = new InMemoryUserRepository();
+  constructor(userRepository: UserRepository) {
+    this.repository = userRepository;
   }
 
   async run(): Promise<User[]> {
